@@ -1,7 +1,6 @@
 document.getElementById("registrationForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Reset old errors
   document.querySelectorAll(".error-message").forEach(el => el.remove());
 
   const fullName = document.getElementById("fullName").value.trim();
@@ -14,7 +13,6 @@ document.getElementById("registrationForm").addEventListener("submit", function 
 
   let isValid = true;
 
-  // Function to show error below input
   function showError(inputId, message) {
     const inputBox = document.getElementById(inputId).parentElement;
     const error = document.createElement("p");
@@ -24,12 +22,10 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     isValid = false;
   }
 
-  // Full name validation
   if (!/^[A-Za-z\s]+$/.test(fullName)) {
     showError("fullName", "Full Name should only contain letters (no numbers).");
   }
 
-  // Username validation → no emails allowed, only letters/numbers/underscore
   if (!/^[A-Za-z0-9_]+$/.test(username)) {
     showError("username", "Username should only contain letters, numbers, and underscores.");
   }
@@ -37,17 +33,14 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     showError("username", "Username cannot be an email address.");
   }
 
-  // Email validation
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     showError("email", "Enter a valid email address.");
   }
 
-  // Phone number validation
   if (!/^\d{10}$/.test(phone)) {
     showError("phone", "Phone number must be exactly 10 digits.");
   }
 
-  // Password match check
   if (password !== confirmPassword) {
     showError("confirmPassword", "Passwords do not match.");
   }
@@ -56,7 +49,6 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     successMessage.style.display = "block";
     this.reset();
 
-    // Hide success message after 3 seconds
     setTimeout(() => {
       successMessage.style.display = "none";
     }, 3000);

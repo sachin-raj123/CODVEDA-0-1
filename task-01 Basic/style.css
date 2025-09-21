@@ -1,4 +1,3 @@
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +5,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  min-height: 100vh; /* allows body to grow if content is taller than viewport */
+  min-height: 100vh;
   background: linear-gradient(135deg, #51b1cb, #ae43ae);
 }
 
-/* Container */
 .container {
   max-width: 500px;
   width: 100%;
@@ -25,11 +22,10 @@ body {
   border-radius: 6px;
   position: relative;
 
-  max-height: 90vh; /* prevents container from overflowing viewport */
-  overflow-y: auto; /* adds scroll if content is taller */
+  max-height: 90vh; 
+  overflow-y: auto; 
 }
 
-/* Success Message */
 #successMessage {
   display: none;
   background: #d4edda;
@@ -42,13 +38,13 @@ body {
   font-weight: 500;
 }
 
-/* Title */
 .container .title {
   font-size: 25px;
   font-weight: 500;
   position: relative;
-  margin-bottom: 20px; /* ensures space below heading */
+  margin-bottom: 20px; 
 }
+
 .container .title::before {
   content: '';
   position: absolute;
@@ -59,7 +55,6 @@ body {
   background: linear-gradient(135deg, #51b1cb, #ae43ae);
 }
 
-/* Form */
 .container form .user-details {
   display: flex;
   flex-wrap: wrap;
@@ -93,7 +88,6 @@ body {
   border-color: #ae43ae;
 }
 
-/* Gender Section */
 .gender-details {
   margin-top: 20px;
 }
@@ -128,7 +122,6 @@ body {
   background: #ae43ae;
 }
 
-/* Button */
 .button {
   margin-top: 20px;
 }
@@ -147,14 +140,12 @@ body {
   opacity: 0.9;
 }
 
-/* Error Messages */
 .error-message {
   color: red;
   font-size: 14px;
   margin-top: 4px;
 }
 
-/* Media Queries */
 @media (max-width: 600px) {
   .user-details .input-box {
     width: 100%;
@@ -164,6 +155,6 @@ body {
     align-items: flex-start;
 }
   .container {
-    padding: 20px 15px; /* slightly smaller padding on mobile */
-}
+    padding: 20px 15px; 
   }
+}
