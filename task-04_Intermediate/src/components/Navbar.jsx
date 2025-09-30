@@ -162,6 +162,12 @@ export default function Navbar() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
+                  <Link
+                  to ='/'
+                  className=" block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  Home
+                </Link>
                   <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-gray-900 hover:bg-gray-50">
                     Services
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-[open]:rotate-180" />
@@ -191,18 +197,18 @@ export default function Navbar() {
                 >
                   Departments
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to ='/aboutus'
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   About Us
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to ='/contact'
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
               <div className="py-6">
                 <div className="flex flex-col gap-3">
@@ -221,6 +227,6 @@ export default function Navbar() {
           </div>
         </DialogPanel>
       </Dialog>
-    </header>
-  )
+    </header>
+  )
 }
