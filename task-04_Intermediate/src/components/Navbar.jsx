@@ -141,7 +141,9 @@ export default function Navbar() {
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel 
+    className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm bg-white px-6 py-6 shadow-xl transition-transform duration-300"
+  >
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-2">
@@ -164,6 +166,7 @@ export default function Navbar() {
                 <Disclosure as="div" className="-mx-3">
                   <Link
                   to ='/'
+                  onClick={() => setMobileMenuOpen(false)} 
                   className=" block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Home
@@ -199,12 +202,14 @@ export default function Navbar() {
                 </a>
                 <Link
                   to ='/aboutus'
+                  onClick={() => setMobileMenuOpen(false)} 
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   About Us
                 </Link>
                 <Link
                   to ='/contact'
+                  onClick={() => setMobileMenuOpen(false)} 
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Contact
